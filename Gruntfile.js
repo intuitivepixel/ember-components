@@ -98,7 +98,8 @@ module.exports = function(grunt) {
                      ]));
 
   grunt.registerTask('build:other', filterAvailable([
-                     'copy:vendor'
+                     'copy:vendor',
+                     'embersmith:build'
                      ]));
 
   grunt.registerTask('build:after:dist', filterAvailable([

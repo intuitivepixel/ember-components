@@ -3,7 +3,7 @@ var IntroRoute = Ember.Route.extend({
     var posts = [];
     //return this.store.find('post');
     return new Ember.RSVP.Promise(function(resolve, reject) {
-      $.getJSON('intro.json', function(data) {
+      $.getJSON('blog.json', function(data) {
 
         //var result = data.rows.map(function(doc) {
           //console.log('Doc id: %@'.fmt(doc));
@@ -11,7 +11,7 @@ var IntroRoute = Ember.Route.extend({
           //return App.Component.create(doc.value);
         //});
 
-        resolve(new Ember.Handlebars.SafeString(data[0].html));
+        resolve(new Ember.Handlebars.SafeString(data[1].html));
 
       }).fail(reject);
     });
