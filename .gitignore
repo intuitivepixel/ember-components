@@ -10,6 +10,7 @@
 !/vendor/almond.js
 !/vendor/resolver.js
 !/vendor/bootstrap
+!/vendor/ember-data
 
 # misc
 /.sass-cache
