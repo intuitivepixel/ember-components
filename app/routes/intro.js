@@ -1,19 +1,20 @@
-var IndexRoute = Ember.Route.extend({
+var IntroRoute = Ember.Route.extend({
   model: function() {
-    //var posts = [];
+    var posts = [];
     //return this.store.find('post');
-    // return new Ember.RSVP.Promise(function(resolve, reject) {
-    //   $.getJSON('https://intuitivepixel.iriscouch.com:6984/components-dev/_design/all/_view/all?callback=?', function(data) {
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      $.getJSON('intro.json', function(data) {
 
-    //     var result = data.rows.map(function(doc) {
-    //       console.log('Doc id: %@'.fmt(doc));
-    //       return App.Component.create(doc.value);
-    //     });
+        //var result = data.rows.map(function(doc) {
+          //console.log('Doc id: %@'.fmt(doc));
+          //console.log(new Ember.Handlebars.SafeString(data[0].html));
+          //return App.Component.create(doc.value);
+        //});
 
-    //     resolve(result);
+        resolve(new Ember.Handlebars.SafeString(data[0].html));
 
-    //   }).fail(reject);
-    // });
+      }).fail(reject);
+    });
   },
   afterModel: function() {
     // var components = [];
@@ -38,4 +39,4 @@ var IndexRoute = Ember.Route.extend({
   }
 });
 
-export default IndexRoute;
+export default IntroRoute;
