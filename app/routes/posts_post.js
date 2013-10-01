@@ -1,3 +1,4 @@
+/* global console */
 var PostsPostRoute = Ember.Route.extend({
   serialize: function(model) {
     console.log(model.get('slug'));
