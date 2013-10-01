@@ -5,13 +5,14 @@ var IntroRoute = Ember.Route.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.getJSON('blog.json', function(data) {
 
-        //var result = data.rows.map(function(doc) {
-          //console.log('Doc id: %@'.fmt(doc));
-          //console.log(new Ember.Handlebars.SafeString(data[0].html));
-          //return App.Component.create(doc.value);
-        //});
+        var firstPostHTML = '';
+        var result = data.forEach(function(post) {
+          if(post.id && post.id === 1){
+            firstPostHTML = new Ember.Handlebars.SafeString(post.html);
+          }
+        });
 
-        resolve(new Ember.Handlebars.SafeString(data[1].html));
+        resolve(firstPostHTML);
 
       }).fail(reject);
     });

@@ -1,36 +1,36 @@
 <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                <img src="assets/components_logo.png" class="logo pull-left">
-                <span class="logo-title">Ember Components</span>
-            </a>
-        </div>
-        <div class="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <img src="assets/components_logo.png" class="logo pull-left">
+        <span class="logo-title">Ember Components</span>
+      </a>
     </div>
+    <div class="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>{{#link-to 'posts'}}Components{{/link-to}}</li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div class="container">
-
-    <p class="lead">
+  <p class="lead">
     <strong>Ember Components</strong><br>
     <span class="subline">Building blocks for <strong>ambitious</strong> web applications.</span>
-    </p>
-    {{hexaflip-cubes chars='EMBER' waitForFirstFlipInterval=1000 flipInterval=5000 waitForLoop=2000}}
+  </p>
+  {{hexaflip-cubes chars='EMBER' waitForFirstFlipInterval=1000 flipInterval=5000 waitForLoop=2000}}
+</div>
 
-    {{outlet}}
-
+<div class="container">
+  {{outlet}}
 </div>
 
 <div id="footer">
-    <div class="container">
-        <p>Brought to you with <i class="glyphicon glyphicon-heart"></i> by <a href="http://intuitivepixel.com" target="_blank">intuitivepixel</a>.</p>
-    </div>
-    <div class="alert alert-warning"><strong>Disclaimer: </strong>This site is at the moment under heavy development.</div>
+  <div class="container">
+    <p>Brought to you with <i class="glyphicon glyphicon-heart"></i> by <a href="http://intuitivepixel.com" target="_blank">intuitivepixel</a>.</p>
+  </div>
+  <div class="alert alert-warning"><strong>Disclaimer: </strong>This site is at the moment under heavy development.</div>
 </div>
