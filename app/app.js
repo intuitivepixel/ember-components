@@ -12,7 +12,7 @@ var App = Ember.Application.extend({
   LOG_VERSION: true,
   modulePrefix: 'appkit', // TODO: loaded via config
   Resolver: Resolver,
-  currentRouteName: '',
+  currentRouteName: ''
 });
 
 App.initializer({
