@@ -1,6 +1,7 @@
 ---
 title: Test Ember Component
 description: Create a timer.
+id: 2
 template: post.hbs
 ---
 

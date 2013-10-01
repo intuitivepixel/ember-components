@@ -1,12 +1,13 @@
 ---
 title: Introduction to Ember Components
 description: Why and how to use components in Ember?
+id: 1
 template: post.hbs
 ---
 
 ### Introduction
 
-Ember.Component is one of many new concepts Ember.js has, and it is the way to go if you want to build better and most of all reusable components for your Ember.js applications. If you are already familiar with Ember.View than the concept of Ember.Component should be very clear to you, altough it has it's differences which makes it more appropriate for most implementation cases, where separation of concerns is written in bold.
+Ember.Component is one of many new concepts <a href="http://emberjs.com/" target="_blank">Ember.js</a> has, and it is the way to go if you want to build better and most of all reusable components for your <a href="http://emberjs.com/" target="_blank">Ember.js</a> applications. If you are already familiar with Ember.View than the concept of Ember.Component should be very clear to you, altough it has it's differences which makes it more appropriate for most implementation cases, where separation of concerns is written in bold.
 
 
 ### What is a Ember.Component and how does it differ from a Ember.View?
