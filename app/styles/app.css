@@ -1,8 +1,236 @@
-/* Put your CSS here */
-html, body {
-    margin: 20px;
+/*************************************************************
+                    google fonts styles
+**************************************************************/
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/Kom15zUm24dIPfIRiNogNuvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 
-@keyframes domChanged { from { background: yellow; } }
-@-webkit-keyframes domChanged { from { background: yellow; } }
-.ember-view { animation: domChanged 1s; -webkit-animation: domChanged 1s; }
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/G2uphNnNqGFMHLRsO_72ngLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
+
+/*************************************************************
+                    common and override styles
+**************************************************************/
+body {
+  font-family: 'Lato', sans-serif;
+  /*padding-top: 40px;*/
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(124, 124, 124);
+}
+
+a {
+  color: rgb(50, 50, 50);
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.lead {
+  font-size: 1.8em;
+  color: #428BCA;
+}
+
+.logo {
+  padding-right: 15px;
+}
+
+.logo-title {
+  font-size: 0.8em;
+  color: #428BCA;
+}
+
+.page-header h1 {
+  font-weight: bold;
+  color: #428BCA;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+}
+
+#footer {
+  padding-top: 25px;
+  text-align: center;
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+
+/*************************************************************
+                    typeahead styles
+**************************************************************/
+.tt-hint {
+  display: none;
+}
+
+.twitter-typeahead {
+  width: 100%;
+  background-color: #fff;
+}
+
+.twitter-typeahead>input {
+  /*border: none;*/
+}
+
+.tt-dropdown-menu {
+  min-width: 100%;
+}
+
+.tt-suggestion {
+  text-align: left;
+  border-bottom: solid 1px #CCCCCC;
+}
+
+.tt-suggestion:last-child {
+  border: 0; border-bottom: 0;
+}
+
+.tt-suggestion .suggestion-title {
+  display: inline-block;
+  width: 60%;
+  font-weight: bold;
+}
+
+.tt-suggestion .suggestion-description {
+}
+
+
+/*************************************************************
+                    hexaflip styles
+**************************************************************/
+.cubes-logo {
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.cubes-logo .hexaflip-cube {
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side-left,
+.cubes-logo .hexaflip-cube .hexaflip-side-right {
+  background-color: #222 !important;
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side {
+  font-weight: 100;
+  text-shadow: none;
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side:nth-child(1n+1) {
+  background-color: #069ad5;
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side:nth-child(2n+2) {
+  background-color: #fc5215;
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side:nth-child(3n+3) {
+  background-color: #30b71d;
+}
+
+.cubes-logo .hexaflip-cube .hexaflip-side:nth-child(4n+4) {
+  background-color: #fdfd6d;
+  color: #222;
+}
+
+
+/*************************************************************
+                    masonry styles
+**************************************************************/
+#masonry-container {
+  /*max-width: 1024px;*/
+}
+
+#masonry-container .item {
+  float: left;
+}
+
+/* item is invisible, but used for layout */
+.item,
+.item-content {
+  width: 180px;
+  height: 240px;
+  margin: 5px;
+}
+
+.item {
+  border: none;
+  background: transparent;
+}
+
+/* item-content is visible, and transitions size */
+.item-content {
+  width: 180px;
+  height: 240px;
+  /*background: #ccc;*/
+  padding: 15px;
+  border: 1px solid;
+  border-color: #ccc;
+  border-radius: 5px;
+  -webkit-transition: width 0.4s, height 0.4s;
+     -moz-transition: width 0.4s, height 0.4s;
+       -o-transition: width 0.4s, height 0.4s;
+          transition: width 0.4s, height 0.4s;
+}
+
+.item:hover .item-content {
+  border-color: white;
+  background: #428bca;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+/* both item and item content change size */
+.item.is-expanded,
+.item.is-expanded .item-content {
+  width: 240px;
+  height: 320px;
+}
+
+.item.is-expanded {
+  z-index: 2;
+}
+
+.item.is-expanded .item-content {
+  background: #F90;
+}
+

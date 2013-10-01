@@ -9,6 +9,7 @@
 /vendor/*
 !/vendor/almond.js
 !/vendor/resolver.js
+!/vendor/bootstrap
 
 # misc
 /.sass-cache
