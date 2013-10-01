@@ -1,0 +1,10 @@
+{
+  "locals": {
+    "name": "Ember Components",
+    "url": "http://ember-components.com",
+    "dev": "http://localhost:8000",
+    "description": "",
+    "keywords": ""
+  },
+  "output": "./tmp/public"
+}

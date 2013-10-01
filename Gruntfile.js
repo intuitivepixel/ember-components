@@ -68,7 +68,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build:before:debug', [
                      'clean:build',
                      'copy:stage',
-                     'lock'
+                     'lock',
+                     'embersmith:build'
                      ]);
 
   grunt.registerTask('build:templates:dist', filterAvailable([
