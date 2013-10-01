@@ -110,7 +110,8 @@ module.exports = function(grunt) {
                      'uglify',
                      'copy:dist',
                      'rev',
-                     'usemin'
+                     'usemin',
+                     'ftp-deploy:dist'
                      ]));
 
   grunt.registerTask('build:after:debug', filterAvailable([
