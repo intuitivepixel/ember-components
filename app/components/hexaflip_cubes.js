@@ -1,9 +1,6 @@
 /* global HexaFlip */
 
 var HexaflipCubesComponent = Ember.Component.extend({
-  debug: function() {
-    debugger;
-  }.on('init'),
   chars: 'EMBER',
   waitForLoop: 5000,
   flipInterval: 3000,
@@ -37,7 +34,6 @@ var HexaflipCubesComponent = Ember.Component.extend({
       return o;
   },
   initHexaflip: function () {
-    debugger;
     var hexaflipCubes, elements, sets,
     waitForLoop = this.get('waitFor'),
     flipInterval = this.get('flipInterval'),
