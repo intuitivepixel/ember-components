@@ -6,9 +6,10 @@
     "qunit": "~1.12.0",
     "ember": "1.1.0-beta.2",
     "ember-data-shim": "1.0.0-beta.3",
-    "hexaflip": "~0.1.1"
+    "hexaflip": "~0.1.1",
+    "prismjs": "*"
   },
-    "resolutions": {
+  "resolutions": {
     "ember": "1.1.0-beta.2"
   }
 }
