@@ -57,6 +57,11 @@ a {
   transition: all 300ms ease;
 }
 
+p {
+  line-height: 1.6em;
+  word-spacing: 0.2em;
+}
+
 .lead {
   font-size: 3em;
   color: #428BCA;
@@ -96,10 +101,6 @@ blockquote {
 
 .nav.navbar-nav.navbar-right {
   padding-top: 12px;
-}
-
-.container {
-  /*background-color: #FFFFFF;*/
 }
 
 .navbar.navbar-default.navbar-fixed-top > .container {
