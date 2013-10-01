@@ -35,7 +35,7 @@ module.exports = {
     }]
   },
   "vendor": {
-    src: ['vendor/**/*.js', 'vendor/**/*.css'],
+    src: ['vendor/**/*.js', 'vendor/**/*.css', 'vendor/**/*.eot', 'vendor/**/*.svg', 'vendor/**/*.ttf', 'vendor/**/*.woff'],
     dest: 'tmp/public/'
   },
   "dist": {

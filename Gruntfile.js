@@ -36,6 +36,7 @@ module.exports = function(grunt) {
       _ = grunt.util._;
 
   config = _.extend(config, Helpers.loadConfig('./tasks/options/'));
+  config = _.extend(config, Helpers.loadConfig('./tasks/user/'));
 
   require('load-grunt-tasks')(grunt);
   grunt.loadTasks('tasks');
