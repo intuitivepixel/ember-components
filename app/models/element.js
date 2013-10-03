@@ -1,5 +1,4 @@
-/* global DS */
-var Post = DS.Model.extend({
+var Element = DS.Model.extend({
   status: DS.attr('string'),
   title: DS.attr('string'),
   slug: DS.attr('string'),
@@ -10,4 +9,4 @@ var Post = DS.Model.extend({
   author: DS.attr('string')
 });
 
-export default Post;
+export default Element;

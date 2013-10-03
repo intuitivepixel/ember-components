@@ -49,7 +49,7 @@ body {
 }
 
 a {
-  font-weight: bold;
+  /*font-weight: bold;*/
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
@@ -57,9 +57,17 @@ a {
   transition: all 300ms ease;
 }
 
+a:hover, a:focus {
+  text-decoration: none;
+}
+
 p {
-  line-height: 1.6em;
+  line-height: 1.4em;
   word-spacing: 0.2em;
+}
+
+.active {
+  color: #428BCA;
 }
 
 .lead {
@@ -70,12 +78,13 @@ p {
 }
 
 .logo {
+  padding-top: 5px;
   padding-right: 15px;
 }
 
 .logo-title {
-  font-size: 0.9em;
-  color: #000000;
+  font-size: 1.1em;
+  color: #428bca;
   line-height: 3em;
 }
 
@@ -88,8 +97,12 @@ blockquote {
   margin: 20px 0;
   padding: 15px 30px 15px 15px;
   border-left: 5px solid #eee;
-  background-color: #f0f7fd;
+  background-color: #ffffff;
   border-color: #d0e3f0;
+}
+
+blockquote p {
+  font-size: 1em;
 }
 
 #footer {
@@ -100,11 +113,16 @@ blockquote {
 }
 
 .nav.navbar-nav.navbar-right {
-  padding-top: 12px;
+  /*padding-top: 12px;*/
 }
 
 .navbar.navbar-default.navbar-fixed-top > .container {
   height: 50px;
+}
+
+.navbar.navbar-default.navbar-fixed-top{
+  height: 70px;
+  padding-top: 10px;
 }
 
 .navbar-default {

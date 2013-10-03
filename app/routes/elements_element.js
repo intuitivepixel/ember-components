@@ -1,5 +1,5 @@
 /* global console */
-var PostsPostRoute = Ember.Route.extend({
+var ElementsElementRoute = Ember.Route.extend({
   serialize: function(model) {
     console.log(model.get('slug'));
     return {
@@ -8,4 +8,4 @@ var PostsPostRoute = Ember.Route.extend({
   }
 });
 
-export default PostsPostRoute;
+export default ElementsElementRoute;

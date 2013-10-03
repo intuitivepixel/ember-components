@@ -1,0 +1,32 @@
+<div class="container">
+  <p class="lead">
+    <strong>Components</strong><br>
+  </p>
+
+  {{! masonry-grid model=model}}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Available Components</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Excerpt</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model}}
+        <tr>
+          <td>{{#link-to 'elements.element' this}}{{title}}{{/link-to}}</td>
+          <td>{{safestring excerpt}}</td>
+          <td>{{author}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+{{outlet}}
+
+</div>

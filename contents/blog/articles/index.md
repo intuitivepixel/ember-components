@@ -2,7 +2,7 @@
 title: Test Ember Component
 description: Create a timer.
 id: 2
-template: post.hbs
+template: article.hbs
 ---
 
 This is *markdown 2*

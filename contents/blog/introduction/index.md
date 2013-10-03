@@ -2,7 +2,7 @@
 title: Introduction to Ember Components
 description: Why and how to use components in Ember?
 id: 1
-template: post.hbs
+template: article.hbs
 ---
 
 ### Introduction

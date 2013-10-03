@@ -2,9 +2,14 @@ var Router = Ember.Router.extend(); // ensure we don't share routes between all 
 
 Router.map(function(){
   this.resource('intro', {path: '/'});
-  this.resource('posts', {path: '/posts'}, function(){
-    this.route('post', {path: ':slug'});
+  this.resource('articles', {path: '/articles'}, function(){
+    this.route('article', {path: ':slug'});
   });
+  this.resource('elements', {path: '/components'}, function(){
+    this.route('element', {path: ':slug'});
+  });
+  this.resource('contribute');
+  this.resource('about');
 });
 
 export default Router;
