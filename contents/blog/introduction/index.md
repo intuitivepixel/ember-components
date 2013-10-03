@@ -64,3 +64,70 @@ App.SomeTestComponent = Ember.Component.extend({
 ```
 
 So now, whenever click is invoked it will send the action `actionNameOnTheController` to whatever controller is listening to it. And best of all, without knowing nothing about the controller. This is the kind of functionality that makes <a href="http://emberjs.com/api/classes/Ember.Component.html" target="_blank">Ember.Component</a>'s reusable in any way.
+
+### Create a simple timer component
+
+For the sake of simplicity we are going to create a simple timer using the component pattern. The timer will include a start, stop and reset buttons which will be used to control the timer. We are also going to make the timer dispatch actions whenever it starts, stops and ticks. The full code for the timer component will be the belove:
+
+ ```[.language-javascript]
+ App.MomentTimerComponent = Ember.Component.extend({
+  seconds: 0,
+  timerId: null,
+  timerRunning: false,
+  actions: {
+    scheduleTimer: function() {
+      this.set('timerId', Ember.run.later(this, function() {
+        this.set('timerRunning', true);
+        this.incrementProperty('seconds');
+        this.send('scheduleTimer');
+        this.sendAction('tick');
+      }, 1000));
+    },
+    stopTimer: function() {
+      this.set('timerRunning', false);
+      Ember.run.cancel(this.get('timerId'));
+    },
+    resetTimer: function() {
+      this.send('stopTimer');
+      this.set('seconds', 0);
+    }
+  },
+  startTimer: function() {
+    this.send('scheduleTimer');
+  }.on('didInsertElement')
+});
+ ```
+ 
+ Now let's dissect the code and go trough every bit by explaining what is does. First of the component structure:
+ 
+ ```[.language-javascript]
+ App.MomentTimerComponent = Ember.Component.extend({
+  seconds: 0,
+  timerId: null,
+  timerRunning: false,
+  actions: {
+    scheduleTimer: function() {
+    },
+    stopTimer: function() {
+    },
+    resetTimer: function() {
+    }
+  },
+  startTimer: function() {
+  }.on('didInsertElement')
+});
+ ```
+`seconds`, `timerId` and `timerRunning` are just local variables to hold the component's state. `seconds` will represent the current elapsed seconds at every moment while the timer is running, to know if the timer is currently running we make use of the `timerRunning` flag that will be a simple boolean. `timerId` will hold the id the call to `Ember.run.later` returns, we will use this id to be able to get hold of the timer when we want to stop/cancel it's execution. `scheduleTimer`, `stopTimer` and `resetTimer` are very much self explanatory as we will se in a moment. `startTimer` which is bound to the component's `didInsertElement` hook is just a helper function that starts the timer right away when it was inserted into the DOM. No let's implement the actual code to make this function do what they are supposed to.
+
+We beginn by defining the main function `scheduleTimer`.
+
+ ```[.language-javascript]
+scheduleTimer: function() {
+  this.set('timerId', Ember.run.later(this, function() {
+    this.set('timerRunning', true);
+    this.incrementProperty('seconds');
+    this.send('scheduleTimer');
+    this.sendAction('tick');
+  }, 1000));
+}
+```
