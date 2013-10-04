@@ -66,10 +66,6 @@ p {
   word-spacing: 0.2em;
 }
 
-.active {
-  color: #428BCA;
-}
-
 .lead {
   font-size: 3em;
   color: #428BCA;
@@ -129,6 +125,15 @@ blockquote p {
   background-color: #FFFFFF;
 }
 
+.navbar-default .navbar-nav > li > a.active {
+  border-bottom: 2px solid #428BCA;
+  padding-bottom: 21px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, a:focus {
+  border-bottom: 2px solid #428BCA;
+  padding-bottom: 21px;
+}
 
 /*************************************************************
                     prismjs styles
