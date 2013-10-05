@@ -1,4 +1,4 @@
 ---
-title: blog
+title: Components
 template: index.hbs
 ---
