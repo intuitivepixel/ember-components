@@ -6,7 +6,7 @@ Router.map(function(){
     this.route('article', {path: ':slug'});
   });
   this.resource('elements', {path: '/components'}, function(){
-    this.route('element', {path: ':slug'});
+    this.route('element', {path: ':element_id'});
   });
   this.resource('contribute');
   this.resource('about');

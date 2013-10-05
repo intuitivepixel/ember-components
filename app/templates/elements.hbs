@@ -10,17 +10,17 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>Id</th>
           <th>Title</th>
           <th>Excerpt</th>
-          <th>Author</th>
         </tr>
       </thead>
       <tbody>
-        {{#each model}}
+        {{#each element in model}}
         <tr>
-          <td>{{#link-to 'elements.element' this}}{{title}}{{/link-to}}</td>
-          <td>{{safestring excerpt}}</td>
-          <td>{{author}}</td>
+          <td>{{element.id}}</td>
+          <td>{{#link-to 'elements.element' element}}{{element.title}}{{/link-to}}</td>
+          <td>{{element.description}}</td>
         </tr>
         {{/each}}
       </tbody>

@@ -1,7 +1,6 @@
 var IntroRoute = Ember.Route.extend({
   model: function() {
     var articles = [];
-    //return this.store.find('articles');
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.getJSON('articles.json', function(data) {
 
