@@ -1,18 +1,19 @@
 var ArticlesRoute = Ember.Route.extend({
   model: function() {
-    var articles = [];
-    //return this.store.find('articles');
+    var articles = Ember.ArrayController.create({
+      content: [],
+      sortProperties: ['id'],
+      sortAscending: true
+    });
+
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.getJSON('articles.json', function(data) {
 
-        var firstArticleHTML = '';
         var result = data.forEach(function(article) {
-          if(article.id && article.id === 2){
-            firstArticleHTML = new Ember.Handlebars.SafeString(article.html);
-          }
+            articles.pushObject(article);
         });
 
-        resolve(firstArticleHTML);
+        resolve(articles);
 
       }).fail(reject);
     });

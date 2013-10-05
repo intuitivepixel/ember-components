@@ -30,6 +30,7 @@ function init() {
 
 function initHelpers() {
   import safestring from 'appkit/helpers/safestring';
+  import moment from 'appkit/helpers/moment';
 }
 
 export default App;

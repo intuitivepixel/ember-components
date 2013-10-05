@@ -1,19 +1,19 @@
 ---
+id: 2
 title: Create a simple timer component
 description: How to create a simple timer component using the component pattern?
-id: 2
 template: article.hbs
+tags:
+  - component
+  - ember.js
+  - timer
 ---
 
-### Create a simple timer component
+Let's create a simple component that try's to showcase all of the component advantages and functionality. For the sake of simplicity we are going to create a simple timer using the component pattern. The timer will include beside showing the elapsed seconds start, stop and reset buttons which will be used to control the timer. We are also going to make the timer dispatch actions whenever it starts, stops and ticks.
 
-Now, because code say's more than a thousand words, let's create a simple component that try's to showcase all of the component advantages and functionality.
+First of let's create a structure for the functionality we are going to implement. The component structure looks like this:
 
-For the sake of simplicity we are going to create a simple timer using the component pattern. The timer will include beside showing the elapsed seconds start, stop and reset buttons which will be used to control the timer. We are also going to make the timer dispatch actions whenever it starts, stops and ticks.
-
- First of let's create a structure for the functionality we are going to implement. The component structure looks like this:
-
- ```[.language-javascript]
+ ```javascript
  App.BasicTimerComponent = Ember.Component.extend({
   seconds: 0,
   timerId: null,
@@ -38,7 +38,7 @@ For the sake of simplicity we are going to create a simple timer using the compo
 
 We beginn by defining the main function `scheduleTimer`.
 
- ```[.language-javascript]
+ ```javascript
 scheduleTimer: function() {
   this.set('timerId', Ember.run.later(this, function() {
     this.set('timerRunning', true);
@@ -49,7 +49,7 @@ scheduleTimer: function() {
 ```
 Ok, let's dissect this bit by bit, we set the `timerId` to the number `Ember.run.later` returns. Inside the run later function we set our local flag `timerRunning` then go on using `this.incrementProperty('seconds');` to increment the seconds variable by 1, and since we have setup run later to run after 1000 milliseconds and then stop, we need a way to re-invoke this method again, we do this just bu recursive calling the `scheduleTimer` with `this.send('scheduleTimer');`. Basically `Ember.run.later` will run the code inside after on second and stop, but with the recursive call we are re-scheduling it again and again until something else stop's the timer.
 
-### Sending actions from a component to the outside world
+#### Sending actions from a component to the outside world
 
 The way <a href="http://emberjs.com/api/classes/Ember.Component.html" target="_blank">Ember.Component</a>'s work is to be agnostic to other parts of your application, therefore rather then passing in a controller reference on which you want an action to be called, the component will notify you about this instead.
 
@@ -57,7 +57,7 @@ At this point to make this example more clear let's create the surrounding code 
 
 This will be our application template where we are going to use our component:
 
-```[.language-html]
+```html
 <script type="text/x-handlebars">
   <h3>Timer Component</h3>
   {{basic-timer}}
@@ -66,7 +66,7 @@ This will be our application template where we are going to use our component:
 
 And this is the simple `ApplicationController` that will listen to the component dispached action:
 
-```[.language-javascript]
+```javascript
 App.ApplicationController = Ember.ObjectController.extend({
   actions: {
     timerTicked: function() {
@@ -78,7 +78,7 @@ App.ApplicationController = Ember.ObjectController.extend({
 
 So now, let's assume we want to be notified whenever the timer ticks, to be able to do that we add `this.sendAction();` inside our `scheduleTimer` function defined earlier.
 
- ```[.language-javascript]
+ ```javascript
 scheduleTimer: function() {
   this.set('timerId', Ember.run.later(this, function() {
     this.set('timerRunning', true);
@@ -90,7 +90,7 @@ scheduleTimer: function() {
 ```
 Right now nothing has changed since we have still not wired up the listening controller and the component, so let's do this:
 
-```[.language-html]
+```html
 <script type="text/x-handlebars">
   <h3>Timer Component</h3>
   {{basic-timer action="timerTicked"}}
@@ -108,7 +108,7 @@ At this point we know all the features to finish our component with the rest of 
 
 As we saw earlier in `scheduleTimer` we set the returning id from the call to `Ember.run.later` to the component local variable `timerId`, let's now use this id to stop the timer execution. We are also going to provide a button in our component template to invoke the `stopTimer` function. `Ember.run` supports canceling a started timeout with `Ember.run.cancel(timerId);` this is now what we are going to use inside our `stopTimer` function to do that. For later use we are also going to set the flag `timerRunning` to false.
 
-```[.language-javascript]
+```javascript
 stopTimer: function() {
   Ember.run.cancel(this.get('timerId'));
   this.set('timerRunning', false);
@@ -116,7 +116,7 @@ stopTimer: function() {
 ```
 And we add also a button which will execute the `stopTimer` action:
 
-```[.language-html]
+```html
 <script type="text/x-handlebars">
   <h3>Timer Component</h3>
   {{basic-timer action="timerTicked"}}
@@ -128,8 +128,8 @@ Let's follow along this pattern and implement the missing functionality, startin
 
 Here the full code for the timer component:
 
- ```[.language-javascript]
- App.MomentTimerComponent = Ember.Component.extend({
+ ```javascript
+ App.BasicTimerComponent = Ember.Component.extend({
   seconds: 0,
   timerId: null,
   timerRunning: false,

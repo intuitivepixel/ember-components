@@ -3,3 +3,21 @@
     <strong>Articles</strong><br>
   </p>
 </div>
+
+{{#each article in model}}
+  <div class="row">
+    <div class="pull-left">
+      <h2>{{article.title}}</h2>
+      <!-- span>{{moment article.rfc822date}}</span -->
+    </div>
+    <!-- div class="pull-right">
+      {{#each tag in article.tags}}
+          <span class="label label-primary">{{tag}}</span>
+      {{/each}}
+    </div -->
+  </div>
+  <div class="row">
+    {{safestring article.html}}
+  </div>
+  <hr>
+{{/each}}

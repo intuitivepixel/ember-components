@@ -1,8 +1,7 @@
 ---
-title: Test Ember Component
-description: Create a timer.
-id: 2
-template: article.hbs
+title: Articles
+description: All the Articles.
+template: articles.hbs
 ---
 
 This is *markdown 2*
