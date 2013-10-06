@@ -45,11 +45,10 @@ body {
   font-size: 15px;
   font-weight: 300;
   color: #444444;
-  background-color: #ecf0f1;
+  background-color: #ffffff;
 }
 
 a {
-  /*font-weight: bold;*/
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
@@ -85,7 +84,7 @@ p {
 }
 
 .page-header h1 {
-  font-weight: bold;
+  font-weight: 400;
   color: #428BCA;
 }
 
