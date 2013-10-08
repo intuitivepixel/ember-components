@@ -4,28 +4,13 @@
   </p>
 
   {{! masonry-grid model=model}}
+  {{! element.description}}
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Available Components</div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Excerpt</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each element in model}}
-        <tr>
-          <td>{{element.id}}</td>
-          <td>{{#link-to 'elements.element' element}}{{element.title}}{{/link-to}}</td>
-          <td>{{element.description}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+  <ul class="list-group">
+    {{#each element in model}}
+      <li class="list-group-item">{{#link-to 'elements.element' element}}{{element.title}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
 
 {{outlet}}
 

@@ -107,7 +107,10 @@ blockquote p {
 }
 
 hr {
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #CECECE;
+  width: 70%;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .navbar.navbar-default.navbar-fixed-top > .container {
