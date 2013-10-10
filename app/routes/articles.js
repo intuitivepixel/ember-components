@@ -1,3 +1,5 @@
+import Article from 'appkit/models/article';
+
 var ArticlesRoute = Ember.Route.extend({
   model: function() {
     var articles = Ember.ArrayController.create({
@@ -10,7 +12,7 @@ var ArticlesRoute = Ember.Route.extend({
       $.getJSON('articles.json', function(data) {
 
         var result = data.forEach(function(article) {
-            articles.pushObject(article);
+            articles.pushObject(Article.create(article));
         });
 
         resolve(articles);

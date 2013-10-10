@@ -3,15 +3,19 @@
     <strong>Components</strong><br>
   </p>
 
-  {{! masonry-grid model=model}}
-  {{! element.description}}
-
-  <ul class="list-group">
-    {{#each element in model}}
-      <li class="list-group-item">{{#link-to 'elements.element' element}}{{element.title}}{{/link-to}}</li>
-    {{/each}}
-  </ul>
-
-{{outlet}}
+  <div class="row">
+    <div class="col-xs-4">
+      <ul class="list-group">
+        {{#each element in model}}
+          {{#link-to 'elements.element' element}}
+            <li class="list-group-item">{{element.title}}</li>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-xs-8">
+      {{outlet}}
+    </div>
+  </div>
 
 </div>

@@ -1,3 +1,5 @@
+import Element from 'appkit/models/element';
+
 var ElementsRoute = Ember.Route.extend({
   model: function() {
     var elements = Ember.ArrayController.create({
@@ -10,7 +12,7 @@ var ElementsRoute = Ember.Route.extend({
       $.getJSON('components.json', function(data) {
 
         var result = data.forEach(function(element) {
-            elements.pushObject(element);
+            elements.pushObject(Element.create(element));
         });
 
         resolve(elements);

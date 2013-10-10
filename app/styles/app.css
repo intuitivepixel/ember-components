@@ -60,6 +60,24 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+li.list-group-item {
+  border: none;
+  cursor: pointer;
+}
+
+li.list-group-item:hover {
+  background-color: #428BCA;
+}
+
+a > li.list-group-item:hover {
+  color: #FFFFFF;
+}
+
+a.active > li.list-group-item {
+  color: #FFFFFF;
+  background-color: #428BCA;
+}
+
 p {
   line-height: 1.4em;
   word-spacing: 0.2em;
@@ -153,6 +171,10 @@ hr {
   text-align: center;
 }
 
+.col-xs-4 {
+  background-color: #FFFFFF;
+  border: none;
+}
 
 /*************************************************************
                     highlight styles
