@@ -8,7 +8,8 @@
     "ember-data-shim": "1.0.0-beta.3",
     "hexaflip": "~0.1.1",
     "momentjs": "~2.2.1",
-    "highlightjs": "~7.3.0"
+    "highlightjs": "~7.3.0",
+    "markdown": "~0.5.0"
   },
   "resolutions": {
     "ember": "1.1.0-beta.2"
