@@ -37,7 +37,7 @@ App.EditableViewComponent = Ember.Component.extend({
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, animi omnis culpa voluptatum quis corporis aliquam natus fugiat ut sit at facilis nostrum alias obcaecati est exercitationem vitae voluptas recusandae.
 
-```
+```xml
 <script type="text/x-handlebars" id="components/editable-view">
   {{#if isEditing}}
     <form {{action "toggleEditing" on="submit"}}>
@@ -51,7 +51,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, animi omni
 </script>
 ```
 
-```
+```xml
 <script type="text/x-handlebars"  data-template-name="index">
   Click on the text below to edit
   {{#editable-view text=someProperty}}
